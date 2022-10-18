@@ -1,0 +1,167 @@
+{
+	"info": {
+		"_postman_id": "76300a13-3287-48a5-8e6c-7fe70697e372",
+		"name": "fetchRewardsApi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23332644"
+	},
+	"item": [
+		{
+			"name": "http://localhost:3000/api/spend",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"points\":5000}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/spend",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"spend"
+					]
+				},
+				"description": "API to spend points. Send the object {\"points\": value} (value is a positive integer)."
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/api/transactions",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"payer\": \"DANNON\", \"points\": 1000, \"timestamp\": \"2020-11-02T14:00:00Z\" }  ",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/transactions",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"transactions"
+					]
+				},
+				"description": "Get request to view all transactions.\n\nPost request to add a new transaction. { \"payer\": \"string\", \"points\": integer, \"timestamp\": \"date(iso8601 format)\" }."
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/api/payerTransactions",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/payerTransactions",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"payerTransactions"
+					]
+				},
+				"description": "Get request to view the current payers available for spending points with their timestamps."
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/api/balances",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/balances",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"balances"
+					]
+				},
+				"description": "Get request to see the total points available for each payer."
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/api/transactions/dannon",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/transactions/dannon",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"transactions",
+						"dannon"
+					]
+				},
+				"description": "Get a transaction by the payer name."
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/api/transactions",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"payer\": \"DANNON\", \"points\": 1000, \"timestamp\": \"2020-11-02T14:00:00Z\" }  ",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/transactions",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"transactions"
+					]
+				},
+				"description": "Post request for transactions to add a new transaction. "
+			},
+			"response": []
+		}
+	]
+}
